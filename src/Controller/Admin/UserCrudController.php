@@ -2,16 +2,17 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Franchise;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\PasswordHasher\Hasher\PasswordHasherFactory;
 
-class FranchiseCrudController extends AbstractCrudController
+class UserCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Franchise::class;
+        return User::class;
     }
 
 
@@ -21,7 +22,8 @@ class FranchiseCrudController extends AbstractCrudController
 
             TextField::new('name'),
             EmailField::new('email'),
-            TextField::new('password')
+            TextField::new('password'),
+
         ];
     }
 
