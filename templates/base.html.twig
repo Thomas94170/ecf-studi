@@ -49,6 +49,7 @@
                             <div class="hidden sm:ml-6 sm:block">
                                 <div class="flex space-x-4">
                                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                    {% if app.user %}
                                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" >Dashboard</a>
 
                                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
@@ -56,6 +57,7 @@
                                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
 
                                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -63,7 +65,7 @@
                             {% if app.user %}
                                 <a href="{{path('mon-compte')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mon Compte <small>({{app.user.name}})</small> </a> | <a href="{{path('deconnexion')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Deconnexion</a>
                             {% else %}
-                                <a href="{{path('connexion')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Connexion</a> | <a href="{{path('inscription')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Inscription</a>
+                                <a href="{{path('connexion')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Connexion</a>
                             {% endif %}
 
                             <!-- Profile dropdown -->
